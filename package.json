@@ -1,0 +1,29 @@
+{
+  "name": "monk-database-helper",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "typings": "typings install",
+    "postinstall": "npm run typings",
+    "clean": "gulp clean",
+    "build": "npm run clean && tsc",
+    "build.watch": "tsc -w",
+    "prepublish": "npm run build",
+	  "test": "npm run build && ./node_modules/.bin/mocha --reporter spec ./source/database.service.tests.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.11.1",
+    "mongodb": "^1.4.4",
+    "monk": "^1.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3",
+    "typescript": "^1.6.2",
+    "typings": "^0.7.9"
+  }
+}
